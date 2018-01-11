@@ -21,6 +21,12 @@ public class ListRules extends Activity {
         setContentView(R.layout.list_activity);
         listView = (ListView) findViewById(R.id.listView);
 
+        /*
+        *
+        * Activity to show list of rules
+        *
+        * */
+
         //ArrayList<RoomContextRule> rules = getIntent().getParcelableArrayListExtra("fr.emse.com.environmentcontrol.RULES");
         //System.out.println(rules);
         ResultAdapter adapter = new ResultAdapter(ListRules.this,new ArrayList<>() );
