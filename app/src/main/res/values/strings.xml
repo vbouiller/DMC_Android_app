@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Environment Control</string>
+    <string name="enter_room">Enter Room #</string>
+    <string name="ok">Ok</string>
+    <string name="light">Light level:  </string>
+    <string name="noise">Noise level:  </string>
+    <string name="lightonoff">Room light on/off</string>
+    <string name="ringonoff">Room ringer on/off</string>
+    <string name="phoneringonoff">Phone ringer on/off</string>
+    <string name="listrules">List rules</string>
+    <string name="image_content_description">Content Description</string>
+</resources>

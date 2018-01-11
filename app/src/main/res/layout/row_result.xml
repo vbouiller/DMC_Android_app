@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/rowTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="event"
+            android:textStyle="bold" />
+
+        <TextView
+        android:id="@+id/rowLeftTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rowTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/rowTitle"
+        android:text="lieu"
+        android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/rowHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/rowTitle"
+            android:layout_below="@id/rowTitle"
+            android:text="date"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/rowDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/rowTitle"
+            android:layout_below="@id/rowHeader"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="description" />
+
+    </RelativeLayout>
+</LinearLayout>

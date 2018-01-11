@@ -1,0 +1,210 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="0dp"
+                android:layout_weight=".70"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:singleLine="true"
+                android:imeOptions="actionDone"/>
+
+            <Button
+                android:id="@+id/buttonCheck"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_weight=".30"
+                android:layout_height="wrap_content"
+                android:onClick="checkRoom"
+                android:text="@string/ok" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <requestFocus />
+
+    <RelativeLayout
+        android:id="@+id/contextLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="visible">
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayoutButtons"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="75dp"
+            android:padding="25dip">
+
+            <TableRow
+                android:id="@+id/tableRowLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/textViewLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="@string/light"
+                    android:textAlignment="gravity"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textViewLightValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowNoise"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/textViewRinger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="@string/noise"
+                    android:textAlignment="gravity"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textViewRingerValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="24sp" />
+
+            </TableRow>
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/image_bulb_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/image_bulb_off"
+            android:layout_alignTop="@+id/image_bulb_off"
+            android:contentDescription="@string/image_content_description"
+            android:src="@drawable/ic_bulb_on"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/image_bulb_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayoutButtons"
+            android:layout_alignEnd="@+id/linearLayoutButtons"
+            android:layout_marginBottom="13dp"
+            android:contentDescription="@string/image_content_description"
+            android:src="@drawable/ic_bulb_off"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/image_son_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/image_son_off"
+            android:layout_alignTop="@+id/image_son_off"
+            android:contentDescription="@string/image_content_description"
+            android:src="@drawable/son_on"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/image_son_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/image_bulb_on"
+            android:layout_alignStart="@+id/linearLayoutButtons"
+            android:layout_marginBottom="18dp"
+            android:contentDescription="@string/listrules"
+            android:src="@drawable/son_off"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/switch_light_button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="14dp"
+                android:onClick="switchLight"
+                android:text="@string/lightonoff" />
+
+            <Button
+                android:id="@+id/switch_ringer_button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="14dp"
+                android:onClick="switchRinger"
+                android:text="@string/ringonoff" />
+
+            <Button
+                android:id="@+id/switch_phone_ringer_button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="14dp"
+                android:onClick="switchPhoneRinger"
+                android:text="@string/phoneringonoff" />
+
+            <Button
+                android:id="@+id/list_rules_button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="14dp"
+                android:text="@string/listrules" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
